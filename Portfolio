@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name ✨</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Hi, I’m <span>Your Name</span> 👋</h1>
+    <p>Creative • Builder • Dreamer</p>
+    <a href="#portfolio" class="btn">See My Work</a>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a creative who loves building cool things on the internet.
+      I work with design, photography, and digital projects that help people express themselves.
+    </p>
+  </section>
+
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="grid">
+      <div class="card">📸 Photography</div>
+      <div class="card">🎨 Design</div>
+      <div class="card">🎥 Video</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Pictology</h3>
+        <p>A creative hub for artists and storytellers.</p>
+        <a href="#">View Project →</a>
+      </div>
+      <div class="project">
+        <h3>Preset Shop</h3>
+        <p>Custom photo presets made with free tools.</p>
+        <a href="#">View Project →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Let’s build something together.</p>
+    <div class="socials">
+      <a href="https://instagram.com">Instagram</a>
+      <a href="https://linkedin.com">LinkedIn</a>
+      <a href="mailto:youremail@gmail.com">Email</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Your Name ✨</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #0f0f1a;
+  color: white;
+  line-height: 1.6;
+}
+
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #7f5af0, #2cb67d);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero span {
+  color: #ffd803;
+}
+
+.hero p {
+  margin: 1rem 0;
+}
+
+.btn {
+  background: #ffd803;
+  color: black;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+section {
+  padding: 80px 10%;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #16161a;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project {
+  background: #16161a;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.project a {
+  color: #7f5af0;
+  text-decoration: none;
+}
+
+.socials a {
+  margin-right: 20px;
+  color: #ffd803;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #16161a;
+}
+const cards = document.querySelectorAll(".card");
+
+window.addEventListener("scroll", () => {
+  cards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+    if (cardTop < window.innerHeight - 100) {
+      card.style.opacity = "1";
+      card.style.transform = "translateY(0)";
+    }
+  });
+});
